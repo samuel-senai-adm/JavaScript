@@ -29,6 +29,7 @@ console.log("Compara valores e tipo diferentes: ", x !== y);
 
 console.log("Óla JavaScript é", a);
 
+console.log("Atividade 3");
 
 let idade = 17;
 
@@ -41,6 +42,8 @@ else {
 
 let nmr = 8;
 let nmr2 = 6;
+
+console.log("Atividade 4");
 
 if (nmr > nmr2) {
     console.log("O número" , nmr , "é maior que o número", nmr2);
