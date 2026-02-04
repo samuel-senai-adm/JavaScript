@@ -1,0 +1,44 @@
+//Blocos de código reutilizáveis
+
+function saudacao() {
+    console.log("Olá, JavaScript!");
+}
+
+saudacao();
+
+//-------------Exemplos -------------//
+
+// ------------
+
+function nome(nome) {
+    console.log("Olá, " + nome);
+}
+
+nome("Ana");
+
+//-------------
+
+function somar(a, b) {
+    return a + b;
+}
+
+console.log(somar(5, 3));
+
+console.log("Atividade 7");
+
+function contar(peso, altura) {
+    return peso / (altura * altura);
+}
+console.log(contar(70, 1.75));
+
+console.log("Atividade 8");
+
+let nMr2 = 10;
+function ParOuImpar(nMr2) {
+    if (nMr2 % 2 === 0) {
+        return "Par";
+    } else {
+        return "Ímpar";
+    }
+}
+console.log(ParOuImpar(nMr2));
