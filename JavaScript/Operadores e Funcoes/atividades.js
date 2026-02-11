@@ -22,10 +22,11 @@ somAEMedia();
 
 console.log("---Atividade 3---");
 
-function caracterQuantidadeENomeMaiusculo(name) {
+function caracterQuantidadeENomeMaiusculo() {
     let nome = prompt("Digite seu nome:");
     let qntDCaracter = nome.length;
     let nomeMaiusculo = nome.toUpperCase();
+    console.log("Nome digitado: " + nome);
     console.log("Quantidade de caracteres: " , qntDCaracter);
     console.log("Nome em maiúsculo: " , nomeMaiusculo);
 }
@@ -33,9 +34,10 @@ caracterQuantidadeENomeMaiusculo()
 
 console.log("---Atividade 4---");
 
-function VerificaTexto(texto) {
+function VerificaTexto() {
     let frase = prompt("Digite uma frase:");
-    console.log(frase.includes("HTML"));
+    console.log("Frase digitada: " , frase);
+    console.log("Contém 'HTML'? ", frase.includes("HTML"));
 }
 VerificaTexto();
 
