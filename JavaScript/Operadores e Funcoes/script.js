@@ -29,7 +29,7 @@ console.log("Compara valores e tipo diferentes: ", x !== y);
 
 console.log("Óla JavaScript é", a);
 
-console.log("Atividade 3");
+console.log("Atividade 3"); 
 
 let idade = 17;
 

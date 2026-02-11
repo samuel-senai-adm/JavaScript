@@ -24,16 +24,23 @@ function somar(a, b) {
 
 console.log(somar(5, 3));
 
-console.log("Atividade 7");
+console.log("--------Atividade 7---------");
+
+let peso = prompt("Digite seu peso em kg:");
+let altura = prompt("Digite sua altura em metros:");
 
 function contar(peso, altura) {
     return peso / (altura * altura);
 }
-console.log(contar(70, 1.75));
 
-console.log("Atividade 8");
+imc = contar(peso, altura);
+imcArd = imc.toFixed(2);
 
-let nMr2 = 10;
+console.log("Seu IMC é: " + imcArd);
+
+console.log("--------Atividade 8---------");
+
+let nMr2 = prompt("Digite um número:");
 function ParOuImpar(nMr2) {
     if (nMr2 % 2 === 0) {
         return "Par";
@@ -42,3 +49,12 @@ function ParOuImpar(nMr2) {
     }
 }
 console.log(ParOuImpar(nMr2));
+
+console.log("Funções Nativas");
+
+let agora = new Date();
+console.log(agora);
+
+function mostrarDataHora() {
+    let date = new Date();
+}
