@@ -8,3 +8,18 @@ console.log(url); //https://example.com
 document.getElementById("caixa").style.backgroundColor = "pink";
 
 document.getElementById("alerta").classList.add("destaque");
+
+document.getElementById("alert").classList.remove("oculto")
+
+
+let novoParagrafo = document.createElement("p");
+novoParagrafo.textContent = "Este elemento foi criado pelo JavaScript";
+document.getElementById("container").appendChild(novoParagrafo);
+
+
+let novoItem = document.createElement("li");
+novoItem.textContent = "Item novo";
+document.getElementById("lista").appendChild(novoItem)
+
+let item = document.getElementById("item1")
+document.getElementById("list").removeChild(item);
