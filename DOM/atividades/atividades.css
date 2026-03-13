@@ -1,3 +1,136 @@
-.oculto{
+/* Reset básico e fontes */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container principal para centralizar tudo */
+main {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Estilos dos Títulos */
+h2 {
+    color: #2c3e50;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+h1.titulo {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    transition: color 0.3s ease; /* Transição suave para a cor */
+}
+
+/* Separadores */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 40px 0;
+}
+
+/* Estilos dos Botões */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#botaoAzul { background-color: #3498db; color: white; }
+#botaoVermelho { background-color: #e74c3c; color: white; }
+#botaoToggle { background-color: #f39c12; color: white; }
+#clique { background-color: #9b59b6; color: white; }
+#adiciona { background-color: #27ae60; color: white; }
+#save { background-color: #2c3e50; color: white; }
+
+/* Estilos dos Inputs */
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Estilos dos Parágrafos de Resultado */
+p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Classe para esconder elementos (Atividade 2) */
+.oculto {
     display: none;
+}
+
+/* Estilização da Lista (Atividade 5) */
+#list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#list li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#list li:hover {
+    background-color: #f9f9f9;
+}
+
+#list li:last-child {
+    border-bottom: none;
+}
+
+/* Estilos específicos para o Desafio Hard */
+#p {
+    font-weight: bold;
+    font-size: 1.2rem;
+    min-height: 1.5em; /* Evita pulo de layout */
 }
