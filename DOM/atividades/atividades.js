@@ -81,3 +81,64 @@ save.addEventListener("click", function() {
         p.style.color ="green";
     }}
 );
+
+// Exercicios - Validação de Campos
+// Validação Simples de E-mail / Verificação Simples de Força de Senha
+
+let email = document.querySelector('#email')
+let validacao = document.querySelector('#validacao')
+let pa = document.querySelector("#pa")
+
+validacao.addEventListener("click", function() {
+    let valor = email.value.trim();
+//if (email.value.trim().includes("@", ".")) {
+//     if (valor.includes("@") && valor.includes(".") && valor.length >= 6) {
+//         pa.textContent = "Sucesso";
+//         pa.style.color = "green";
+//     } if (valor.includes("@") && valor.includes(".") && valor.length < 6) {
+//         pa.textContent = "E-mail Fraco";
+//         pa.style.color = "red";
+//     } if(valor.includes("@") && valor.length >= 6) {
+//         pa.textContent = "E-Mail sem '.'";
+//         pa.style.color = "red";
+//     } if(valor.includes(".") && valor.length >= 6) {
+//         pa.textContent = "E-Mail sem '@'";
+//         pa.style.color = "red";
+//     } if(valor.includes("@") && valor.length < 6) {
+//         pa.textContent = "E-Mail fraco e sem '.'";
+//         pa.style.color = "red";
+//     } if(valor.includes(".") && valor.length < 6) {
+//         pa.textContent = "E-Mail fraco e sem '@'";
+//         pa.style.color = "red";
+//     }
+// });
+if (valor.includes("@") && valor.includes(".") && valor.length >= 6) {
+    pa.textContent = "Sucesso";
+    pa.style.color = "green";
+
+    } else if (valor.includes("@") && valor.includes(".") && valor.length < 6) {
+        pa.textContent = "E-mail Fraco";
+        pa.style.color = "red";
+
+    } else if (valor.includes("@") && valor.length >= 6) {
+        pa.textContent = "E-Mail sem '.'";
+        pa.style.color = "red";
+
+    } else if (valor.includes(".") && valor.length >= 6) {
+        pa.textContent = "E-Mail sem '@'";
+        pa.style.color = "red";
+
+    } else if (valor.includes("@") && valor.length < 6) {
+        pa.textContent = "E-Mail fraco e sem '.'";
+        pa.style.color = "red";
+
+    } else if (valor.includes(".") && valor.length < 6) {
+        pa.textContent = "E-Mail fraco e sem '@'";
+        pa.style.color = "red";
+
+    } else {
+        pa.textContent = "E-mail inválido";
+        pa.style.color = "red";
+    }
+});
+
