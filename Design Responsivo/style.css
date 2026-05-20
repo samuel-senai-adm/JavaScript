@@ -1,0 +1,72 @@
+/*    *= aplica a todos os elementos     */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* .classe= Reutiliza em varios elementos */
+/* .destaque {
+    color: blue;
+    font-weight: bold;
+} */
+/* #id = Aplica a um unico elemento */
+#titulo-principal {
+    color: red;
+    text-align: center;
+}
+/* tag = Aplica a todos os elementos da mesma tag */
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+/* h1,h2,h3= Agrupamento de seletores */
+h3 {
+    font-family: Arial, sans-serif;
+    color: green;
+}
+
+h1 {
+    color: red;
+}
+
+h2 {
+    color: blue;
+}
+
+h4{
+    line-height: 1.5; /*espaço entre linhas*/
+    letter-spacing: 2px; /*espaço entre letras*/
+    word-spacing: 4px; /*espaço entre palavras*/
+}
+img {
+    width: 200px;
+    border: 2px solid black;
+    display: block;
+    margin: auto;
+    box-shadow:4px 4px 8px rgba(187, 6, 6, 0.5); /*sombra*/ 
+}
+ul {
+    list-style-type: none;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    h1 {
+        color: blue;
+    }
+    
+    h2 {
+        color: yellow;
+    }
+}
+
+ /* CELULARES */
+
+ @media (max-width: 767px) {
+    h1 {
+        color: blue;
+    }
+    
+    h2 {
+        color: green;
+    }
+ }
