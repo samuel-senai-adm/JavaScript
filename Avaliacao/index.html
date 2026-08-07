@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Dias | Portfólio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="foto/icone.png" type="image/png">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="cabecalho">
+
+        <div class="container">
+
+            <div class="logo">
+                <h2><span>Samuel Angelo</span></h2>
+            </div>
+
+            <nav>
+
+                <ul class="menu">
+
+                    <li>
+                        <a href="#sobre">Sobre</a>
+                    </li>
+
+                    <li>
+                        <a href="#informacoes">Informações</a>
+                    </li>
+
+                    <li>
+                        <a href="#projetos">Projetos</a>
+                    </li>
+
+                    <li>
+                        <a href="#contato">Contato</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="container hero-container">
+
+            <div class="hero-texto">
+
+                <span class="tag">
+                    Desenvolvedor em Formação
+                </span>
+
+                <h1>
+                    Olá, eu sou <span>Samuel Angelo</span>.
+                </h1>
+
+                <p>
+                    Estudante de Desenvolvimento de Sistemas apaixonado por tecnologia,
+                    programação e desenvolvimento web. Estou sempre buscando aprender
+                    novas tecnologias e desenvolver soluções modernas.
+                </p>
+
+                <a href="#contato" class="botao">
+                    Entrar em contato
+                </a>
+
+            </div>
+
+            <div class="hero-imagem">
+
+                <img src="foto/avatar.png" alt="Avatar de Samuel">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- SOBRE -->
+
+        <section id="sobre" class="sobre">
+
+            <div class="container">
+
+                <div class="titulo-secao">
+
+                    <h2>Sobre Mim</h2>
+
+                    <p>
+                        Um pouco sobre quem eu sou.
+                    </p>
+
+                </div>
+
+                <div class="sobre-card">
+
+                    <p>
+                        Meu nome é <strong>Samuel Angelo</strong>, tenho 17 anos e moro em
+                        Mococa - SP. Atualmente curso Desenvolvimento de Sistemas e
+                        tenho grande interesse por programação, desenvolvimento web,
+                        banco de dados e ciência de dados.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- INFORMAÇÕES -->
+
+        <section id="informacoes" class="cards">
+
+            <div class="container">
+
+                <article class="card">
+
+                    <h3>💻 Informações</h3>
+
+                    <p>
+                        Sou apaixonado por tecnologia e programação. Atualmente estou
+                        focado em aprender mais sobre desenvolvimento web, banco de dados
+                        e ciência de dados.
+                    </p>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>🎮 Hobbies</h3>
+
+                    <p>
+                        Nos meus tempos livres gosto de jogar videogame, praticar
+                        esportes, ler mangás e estudar novas linguagens de programação.
+                    </p>
+
+                </article>
+
+                <article class="card" id="projetos">
+
+                    <h3>🚀 Projetos</h3>
+
+                    <p>
+                        Atualmente estou desenvolvendo a
+                        <a href="https://devsphare.com.br" target="_blank" rel="noopener noreferrer"
+                            class="link-devsphare">
+                            <strong>Devsphare</strong>,
+                        </a>
+                    um projeto voltado para soluções tecnológicas, incluindo um sistema
+                        de Armários Inteligentes para empresas, academias e diversos
+                        ambientes corporativos.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- CONTATO -->
+
+        <section id="contato" class="contato">
+
+            <div class="container contato-container">
+
+                <div class="contato-texto">
+
+                    <h2>Entre em contato</h2>
+
+                    <p>
+                        Caso queira conversar sobre tecnologia, projetos ou parcerias,
+                        basta preencher o formulário ao lado.
+                    </p>
+
+                </div>
+
+                <div class="formulario-contato">
+
+                    <form id="formContato">
+
+                        <div>
+
+                            <label for="nome">
+                                Nome
+                            </label>
+
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+                        </div>
+
+                        <div>
+
+                            <label for="email">
+                                E-mail
+                            </label>
+
+                            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+                        </div>
+
+                        <button type="submit">
+
+                            Enviar mensagem
+
+                        </button>
+
+                    </form>
+
+                    <p id="mensagem"></p>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        <div class="container">
+            <p>
+                © 2026 Samuel Dias • Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+    <script src="java.js"></script>
+</body>
+
+</html>
