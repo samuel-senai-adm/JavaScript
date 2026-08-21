@@ -86,3 +86,23 @@ input {
 #resultado:empty {
     display: none;
 }
+.botaoExcluir {
+    border: none;
+    border-radius: 8px;
+    padding: 7px 16px;
+    background-color: #ff5c5c;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botaoExcluir:hover {
+    background-color: #e04444;
+    transform: scale(1.03);
+}
+
+.botaoExcluir:active {
+    transform: scale(0.97);
+}

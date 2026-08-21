@@ -23,23 +23,31 @@ class Estoque {
         this.produtos.push(produto);
     }
 
+    excluirProduto(indice) {
+        this.produtos.splice(indice, 1);
+        this.exibir();
+    }
+
     exibir() {
         const resultado = document.querySelector('#resultado');
 
         resultado.innerHTML = "";
 
-        this.produtos.forEach(produto => {
+        this.produtos.forEach((produto, indice) => {
             resultado.innerHTML += `
-            <div>
-                <p>Nome: ${produto.nome}</p>
-                <p>Preço: ${produto.preco}</p>
-                <p>Categoria: ${produto.categoria}</p>
-                <p>Desconto: ${produto.desconto}%</p>
-            </div>
-            <hr>
-        `;
-        });
+                <div>
+                    <p>Nome: ${produto.nome}</p>
+                    <p>Preço: ${produto.preco}</p>
+                    <p>Categoria: ${produto.categoria}</p>
+                    <p>Desconto: ${produto.desconto}%</p>
 
+                    <button class="botaoExcluir" onclick="estoque.excluirProduto(${indice})">
+                        Excluir
+                    </button>
+                </div>
+                <hr>
+            `;
+        });
     }
 }
 
