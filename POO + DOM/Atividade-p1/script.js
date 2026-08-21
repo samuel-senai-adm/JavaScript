@@ -10,6 +10,7 @@ class Produto {
         this.preco = this.preco - (this.preco * (this.desconto / 100));
     }
 
+
     exibir() {
         const resultado = document.querySelector('#resultado');
 
@@ -35,7 +36,21 @@ botaoCadastrar.addEventListener('click', function () {
     const produto = new Produto(nome.value, preco.value, categoria.value, desconto.value);
 
     produto.aplicarDesconto();
+    localStorage.setItem("Produto", JSON.stringify(produto));
     produto.exibir();
 
 });
 
+const dados = localStorage.getItem("Produto");
+if (dados) {
+    const produtoSalvo = JSON.parse(dados);
+
+    const produto = new Produto(
+        produtoSalvo.nome,
+        produtoSalvo.preco,
+        produtoSalvo.categoria,
+        produtoSalvo.desconto
+    );
+
+    produto.exibir();
+};

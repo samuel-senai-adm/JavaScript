@@ -1,0 +1,108 @@
+/* Reset básico de margens e definição de fonte simples */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* O HTML ocupa a tela toda com fundo cinza claro e centraliza o body */
+html {
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* O BODY vira o Card Branco centralizado */
+body {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 380px;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título centralizado e limpo */
+#titulo {
+    font-size: 1.4rem;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* Organização e tamanho padronizado para os inputs */
+input {
+    width: 100%;
+    height: 44px;
+    font-size: 15px;
+    padding: 0 14px;
+    border: 1px solid #dcdfe6;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    outline: none;
+    background-color: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+
+/* Botão Cadastrar */
+#botaoCadastrar {
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: #6c5ce7;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+
+/* Área do resultado dentro do card */
+#resultado {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    font-size: 14px;
+    color: #495057;
+    text-align: center;
+    word-break: break-word;
+}
+
+/* Oculta a caixa de resultado enquanto ela estiver vazia */
+#resultado:empty {
+    display: none;
+}
+.botaoExcluir {
+    border: none;
+    border-radius: 8px;
+    padding: 7px 16px;
+    background-color: #ff5c5c;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botaoExcluir:hover {
+    background-color: #e04444;
+    transform: scale(1.03);
+}
+
+.botaoExcluir:active {
+    transform: scale(0.97);
+}   
