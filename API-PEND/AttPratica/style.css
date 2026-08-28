@@ -1,0 +1,383 @@
+/* ==========================================================================
+   Projeto: Monte sua Pizza (Atividade de JavaScript - Drag and Drop)
+   Arquivo: style.css
+   Descrição: Estilização moderna, organizada e com identidade visual de pizzaria.
+   ========================================================================== */
+
+/* Importação de fonte moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Reset básico e box-sizing universal */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Configuração geral do corpo da página */
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #fcfaf7;
+    color: #2d3748;
+    min-height: 100vh;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    line-height: 1.6;
+
+    /* Layout Principal em CSS Grid (Desktop Layout: Lado a Lado) */
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    grid-template-rows: auto auto 1fr auto auto;
+    gap: 1.5rem;
+    grid-template-areas:
+        "header     header"
+        "title-ing  area-pizza"
+        "list-ing   area-pizza"
+        "action     area-pizza"
+        "msg        msg";
+}
+
+/* Ocultar a linha HR para um visual limpo baseado em cards */
+hr {
+    display: none;
+}
+
+/* ==========================================================================
+   1. TÍTULO PRINCIPAL (HEADER)
+   ========================================================================== */
+h1 {
+    grid-area: header;
+    text-align: center;
+    color: #c8102e;
+    font-size: 2.2rem;
+    font-weight: 700;
+    padding: 1.25rem 1.5rem;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(200, 16, 46, 0.08);
+    border: 1px solid #f0f0f0;
+    border-top: 5px solid #c8102e;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* ==========================================================================
+   2. SEÇÃO DE INGREDIENTES (PAINEL ESQUERDO)
+   ========================================================================== */
+/* Título "Ingredientes:" */
+body > h4 {
+    grid-area: title-ing;
+    font-size: 1.25rem;
+    color: #1a202c;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 0.2rem;
+}
+
+body > h4::before {
+    content: '📌';
+    font-size: 1.1rem;
+}
+
+/* Container da lista de ingredientes */
+#ingredientes {
+    grid-area: list-ing;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #edf2f7;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    align-content: flex-start;
+    align-items: center;
+}
+
+/* Card Individual do Ingrediente */
+.ingrediente {
+    background-color: #fff8f8;
+    color: #a71d2a;
+    border: 1.5px solid #fecdcd;
+    padding: 0.6rem 1.1rem;
+    border-radius: 25px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: grab;
+    user-select: none;
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.ingrediente:hover {
+    background-color: #c8102e;
+    color: #ffffff;
+    border-color: #c8102e;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 14px rgba(200, 16, 46, 0.25);
+}
+
+.ingrediente:active {
+    cursor: grabbing;
+    transform: scale(0.96);
+}
+
+/* ==========================================================================
+   3. ÁREA DA PIZZA (PAINEL DIREITO DE MONTAGEM)
+   ========================================================================== */
+#pizza {
+    grid-area: area-pizza;
+    background: linear-gradient(145deg, #ffffff 0%, #fffdfa 100%);
+    border: 3px dashed #cbd5e0;
+    border-radius: 20px;
+    padding: 2.2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+#pizza:hover {
+    border-color: #ffb800;
+    box-shadow: 0 10px 30px rgba(255, 184, 0, 0.12);
+}
+
+/* Título e instrução dentro de #pizza */
+#pizza h4 {
+    font-size: 1.4rem;
+    color: #c8102e;
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+}
+
+#pizza > p {
+    color: #718096;
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Elementos dinâmicos adicionados na pizza pelo JavaScript */
+#pizza > div {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    border: 1px solid #edf2f7;
+    border-left: 6px solid #ffb800;
+    border-radius: 12px;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+    animation: itemPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes itemPop {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#pizza > div p {
+    margin: 0;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.98rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#pizza > div p::before {
+    content: '✔';
+    color: #38a169;
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+/* ==========================================================================
+   4. BOTÕES E AÇÕES
+   ========================================================================== */
+/* Botão de Concluir Pizza */
+#concluir {
+    grid-area: action;
+    background: linear-gradient(135deg, #c8102e 0%, #9e0000 100%);
+    color: #ffffff;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(200, 16, 46, 0.3);
+    transition: all 0.25s ease;
+    width: 100%;
+    text-align: center;
+}
+
+#concluir:hover {
+    background: linear-gradient(135deg, #e50914 0%, #b80000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(200, 16, 46, 0.4);
+}
+
+#concluir:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(200, 16, 46, 0.3);
+}
+
+/* Botão de Remover Ingrediente (Excluir) */
+.botaoExcluir {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    border: 1.5px solid #fed7d7;
+    padding: 0.38rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.botaoExcluir::before {
+    content: '✕';
+    font-size: 0.75rem;
+}
+
+.botaoExcluir:hover {
+    background-color: #e53e3e;
+    color: #ffffff;
+    border-color: #e53e3e;
+    box-shadow: 0 3px 8px rgba(229, 62, 62, 0.3);
+}
+
+/* ==========================================================================
+   5. MENSAGEM DE SUCESSO (#mensagem)
+   ========================================================================== */
+#mensagem {
+    grid-area: msg;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #1b5e20;
+    background-color: #e8f5e9;
+    border: 1.5px solid #a5d6a7;
+    border-radius: 14px;
+    padding: 0;
+    margin-top: 0;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+}
+
+/* Exibição suave da mensagem quando preenchida pelo JS */
+#mensagem:not(:empty) {
+    padding: 1.1rem 1.5rem;
+    margin-top: 0.5rem;
+    opacity: 1;
+    max-height: 120px;
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.12);
+    animation: bannerPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes bannerPop {
+    from {
+        transform: translateY(10px) scale(0.97);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   6. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Layout para Tablets e Telas Médias (<= 850px) */
+@media (max-width: 850px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header"
+            "title-ing"
+            "list-ing"
+            "area-pizza"
+            "action"
+            "msg";
+        gap: 1.2rem;
+        padding: 1.5rem 1rem;
+    }
+
+    #ingredientes {
+        max-height: none;
+        justify-content: center;
+    }
+
+    #pizza {
+        min-height: 320px;
+        padding: 1.5rem;
+    }
+}
+
+/* Ajustes Finais para Dispositivos Móveis / Celulares (<= 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+        padding: 1rem 0.8rem;
+    }
+
+    body > h4 {
+        font-size: 1.1rem;
+    }
+
+    .ingrediente {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.9rem;
+    }
+
+    #pizza {
+        padding: 1.25rem 0.8rem;
+    }
+
+    #pizza h4 {
+        font-size: 1.2rem;
+    }
+
+    #pizza > div {
+        padding: 0.7rem 0.9rem;
+    }
+
+    #concluir {
+        font-size: 0.98rem;
+        padding: 0.85rem 1.2rem;
+    }
+}
