@@ -1,36 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Registro de Visita Técnica</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <video id="camera" autoplay></video>
+
+    <header>
+        <div class="logo">
+            <span>VISITA</span> TÉCNICA
+        </div>
+
+        <div class="status">
+            <span class="status-indicator"></span>
+            Sistema de registro
+        </div>
+    </header>
 
 
+    <main>
+        <section class="intro">
+            <p class="tag">REGISTRO DE PRESENÇA</p>
+
+            <h1>
+                Registro de <span>Visita Técnica</span>
+            </h1>
+
+            <p>
+                Preencha seus dados e realize o registro de presença
+                através da câmera.
+            </p>
+        </section>
+
+        <section class="registro">
+
+            <!-- DADOS DO VISITANTE -->
+            <div class="dados">
+
+                <div class="section-title">
+                    <span class="number">01</span>
+
+                    <div>
+                        <h2>Dados do visitante</h2>
+                        <p>Informe os dados para realizar o registro.</p>
+                    </div>
+                </div>
 
 
+                <div class="formulario">
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+                    </div>
+
+                    <div class="campo">
+                        <label for="empresa">Empresa / Instituição</label>
+                        <input type="text" id="empresa" name="empresa"
+                            placeholder="Digite o nome da empresa ou instituição">
+                    </div>
+
+                    <div class="campo">
+                        <label for="responsavel">Responsável pela visita</label>
+
+                        <input type="text" id="responsavel" name="responsavel" placeholder="Nome do responsável">
+                    </div>
+
+                    <div class="campo">
+                        <label for="motivo">Motivo da visita</label>
+                        <textarea id="motivo" name="motivo"
+                            placeholder="Descreva brevemente o motivo da visita..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CÂMERA -->
+            <div class="camera-area">
+                <div class="section-title">
+                    <span class="number">02</span>
+
+                    <div>
+                        <h2>Registro fotográfico</h2>
+                        <p>Posicione seu rosto diante da câmera.</p>
+                    </div>
+                </div>
+
+                <div class="camera-container">
+                    <video id="camera" autoplay playsinline></video>
+                    <div class="camera-overlay">
+
+                        <div class="face-frame"></div>
+                        <p>
+                            Posicione seu rosto dentro da área indicada
+                        </p>
+                    </div>
+                </div>
+                <div class="camera-info">
+                    <span>●</span>
+                    <p>
+                        Câmera pronta para registro
+                    </p>
+                </div>
+            </div>
+        </section>
+
+         <!-- REGISTRO -->
+        <section class="confirmacao">
+
+            <div>
+                <h2>Pronto para registrar?</h2>
+
+                <p>
+                    Confira seus dados e certifique-se de que seu rosto
+                    esteja visível na câmera.
+                </p>
+            </div>
+
+            <button type="button" id="registrar">
+                Registrar presença
+            </button>
+        </section>
+        <br>
+
+        <!-- LOCALIZAÇÃO -->
+        <div class="localizacao">
+            <div class="icone-localizacao">
+                📍
+            </div>
+
+            <div class="info-localizacao">
+                <h3>Localização</h3>
+
+                <p>
+                    A localização do dispositivo será obtida automaticamente durante o registro.
+                </p>
+
+                <small>
+                    É necessário permitir o acesso à localização no navegador.
+                </small>
+
+                <button type="button" id="mostrarLocalizacao">
+                    Mostrar minha localização
+                </button>
+
+                <div id="resultadoLocalizacao"></div>
+            </div>
+        </div>
 
 
+       
+    </main>
 
+    <footer>
+        <p>
+            Sistema de Registro de Visita Técnica
+        </p>
+        <span>
+            SENAI • Atividade Prática
+        </span>
+    </footer>
 
-
-
-
-
-    
-    <script>
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                console.log("Latitude: " + position.coords.latitude);
-                console.log("Longitude: " + position.coords.longitude);
-            });
-        } else {
-            console.log("Geolocalização não é suportada neste navegador.");
-        }
-    </script>
     <script src="script.js"></script>
 </body>
+
 </html>
