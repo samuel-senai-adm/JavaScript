@@ -515,3 +515,42 @@ footer span {
 #resultadoLocalizacao p {
     margin: 5px 0;
 }
+
+/* Área da foto */
+.foto-area {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Botão para tirar foto */
+#botao {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #234194;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#botao:hover {
+    background-color: #1b3377;
+    transform: translateY(-1px);
+}
+
+#botao:active {
+    transform: translateY(0);
+}
+
+/* Foto capturada */
+#foto {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    display: block;
+}

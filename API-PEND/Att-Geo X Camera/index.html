@@ -84,7 +84,6 @@
             <div class="camera-area">
                 <div class="section-title">
                     <span class="number">02</span>
-
                     <div>
                         <h2>Registro fotográfico</h2>
                         <p>Posicione seu rosto diante da câmera.</p>
@@ -93,24 +92,29 @@
 
                 <div class="camera-container">
                     <video id="camera" autoplay playsinline></video>
-                    <div class="camera-overlay">
 
+                    <div class="camera-overlay">
                         <div class="face-frame"></div>
-                        <p>
-                            Posicione seu rosto dentro da área indicada
-                        </p>
+                        <p>Posicione seu rosto dentro da área indicada</p>
                     </div>
                 </div>
+
                 <div class="camera-info">
                     <span>●</span>
-                    <p>
-                        Câmera pronta para registro
-                    </p>
+                    <p>Câmera pronta para registro</p>
+                </div>
+
+                <div class="foto-area">
+                    <button type="button" id="botao">Tirar foto</button>
+
+                    <canvas id="canvas" style="display: none"></canvas>
+
+                    <img id="foto" alt="Foto registrada">
                 </div>
             </div>
         </section>
 
-         <!-- REGISTRO -->
+        <!-- REGISTRO -->
         <section class="confirmacao">
 
             <div>
@@ -154,7 +158,7 @@
         </div>
 
 
-       
+
     </main>
 
     <footer>
