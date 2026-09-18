@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #222;
+    padding: 30px;
+}
+
+/* TÍTULO PRINCIPAL */
+
+h1 {
+    text-align: center;
+    color: #e65c00;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+/* CADA SEÇÃO */
+
+h2 {
+    color: #222;
+    margin-bottom: 15px;
+    border-left: 5px solid #e65c00;
+    padding-left: 10px;
+}
+
+/* CONTEÚDO DAS SEÇÕES */
+
+body>input,
+input {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* BOTÕES */
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e65c00;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+button:hover {
+    background-color: #c94f00;
+}
+
+/* RESULTADOS */
+
+div[id^="resultado"] {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    min-height: 30px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* TEXTO DOS RESULTADOS */
+
+div[id^="resultado"] p {
+    line-height: 1.8;
+}
+
+div[id^="resultado"] strong {
+    color: #e65c00;
+}
+
+/* LINHAS ENTRE AS SEÇÕES */
+
+hr {
+    border: none;
+    border-top: 2px solid #ddd;
+    margin: 30px 0;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    input {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    button {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
