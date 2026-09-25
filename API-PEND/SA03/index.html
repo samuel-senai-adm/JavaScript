@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Explorer - Explorador de Países</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    
+    <!-- Estilos próprios -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="app-header">
+        <h1>🌍 World Explorer</h1>
+        <p class="subtitle">Descubra informações sobre qualquer país do mundo</p>
+    </header>
+
+    <!-- ===== BARRA DE BUSCA ===== -->
+    <section class="search-section">
+        <div class="search-box">
+            <input 
+                type="text" 
+                id="countryInput" 
+                placeholder="Digite o nome do país (ex: Brasil, Japan, France...)"
+                autocomplete="off"
+            >
+            <button id="searchButton" type="button">🔎 Pesquisar</button>
+        </div>
+        <p id="message" class="message"></p>
+    </section>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="main-content">
+
+        <!-- Seção de informações do país (começa oculta) -->
+        <section id="countrySection" class="country-section hidden">
+
+            <!-- Cabeçalho do país: bandeira + nomes -->
+            <div class="country-header">
+                <img 
+                    id="countryFlag" 
+                    class="country-flag" 
+                    src="" 
+                    alt="Bandeira do país"
+                >
+                <div class="country-titles">
+                    <span id="countryCode" class="country-code">---</span>
+                    <h2 id="countryName" class="country-name">---</h2>
+                    <p id="countryOfficialName" class="country-official">---</p>
+                </div>
+            </div>
+
+            <!-- Grid de informações -->
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <span class="info-label">🏛️ Capital</span>
+                    <span id="capital" class="info-value">---</span>
+                </div>
+
+                <div class="info-card">
+                    <span class="info-label">👥 População</span>
+                    <span id="population" class="info-value">---</span>
+                </div>
+
+                <div class="info-card">
+                    <span class="info-label">🌎 Região</span>
+                    <span id="region" class="info-value">---</span>
+                </div>
+
+                <div class="info-card">
+                    <span class="info-label">💰 Moeda</span>
+                    <span id="currency" class="info-value">---</span>
+                </div>
+
+                <div class="info-card">
+                    <span class="info-label">🗣️ Idiomas</span>
+                    <span id="languages" class="info-value">---</span>
+                </div>
+
+                <div class="info-card">
+                    <span class="info-label">🕐 Fuso horário</span>
+                    <span id="timezone" class="info-value">---</span>
+                </div>
+
+            </div>
+
+            <!-- Mapa -->
+            <div class="map-section">
+                <h3 class="map-title" id="locationText">📍 Localização</h3>
+                <p class="coordinates" id="coordinates">Latitude: -- | Longitude: --</p>
+                <div id="map" class="map"></div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="app-footer">
+        <p>
+            Dados: <a href="https://restcountries.com/" target="_blank" rel="noopener">REST Countries</a> · 
+            Mapa: <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a> · 
+            Geocoding: <a href="https://nominatim.org/" target="_blank" rel="noopener">Nominatim</a>
+        </p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    
+    <!-- Script principal -->
+    <script src="script.js"></script>
+</body>
+</html>
